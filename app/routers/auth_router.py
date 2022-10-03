@@ -1,11 +1,11 @@
 from app import api, mail
-from flask_restx import Resource
+from app.controllers.auth_controller import AuthController
+from app.controllers.user_controller import UsersController
 from app.schemas.auth_schema import AuthRequestSchema
 from app.schemas.users_schema import UsersRequestSchema
-from app.controllers.auth_controller import AuthController
 from flask import request
-from flask_jwt_extended import jwt_required, get_jwt_identity
-from app.controllers.user_controller import UsersController
+from flask_jwt_extended import get_jwt_identity, jwt_required
+from flask_restx import Resource
 
 auth_ns = api.namespace(
     name='Autenticacion',
